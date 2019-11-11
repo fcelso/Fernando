@@ -39,10 +39,11 @@ public class Cadastrar {
 
     public Aluno pesquisaCurso(String curso) {
         for (int i = 0; i < alunos.size(); i++) {
-            if (alunos.get(i).getCurso() != null) {
+            if (alunos.get(i).getCurso().equals(curso)) {
 
-                System.out.println("***************************");
-                System.out.println("RGM: " + alunos.get(i).getRgm());
+               return alunos.get(i);
+                /*System.out.println("***************************");
+                System.out.println("RGM: " + getRgm());
                 System.out.println("Nome: " + alunos.get(i).getNome());
                 System.out.println("Idade: " + alunos.get(i).getIdade());
                 System.out.println("Curso: " + alunos.get(i).getCurso());
@@ -50,7 +51,7 @@ public class Cadastrar {
                 System.out.println("Média final: " + (alunos.get(i).getNota1() + alunos.get(i).getNota2()) / 2);
                 System.out.println("***************************");
             } else {
-                break;
+                break;*/
             }
         }
         return null;
@@ -66,17 +67,20 @@ public class Cadastrar {
         return null;
     }
 
-   public Aluno alterarDados(String rgm, String nome, int idade, String curso, String semestre, float nota1, float nota2) {
-   
-       ArrayList<Aluno> lista = new ArrayList<Aluno>();
-       for (int i = 0; i < alunos.size(); i++) {
-            if (alunos.get(i).getRgm().equalsIgnoreCase(rgm)) {
-                return alunos.get(i);
-       
-       
-       
-                
+   public Aluno alterarDados(String rgmV,String rgmN, String nome, int idade, String curso, String semestre, float nota1, float nota2) {
  
+       for (int i = 0; i < alunos.size(); i++) {
+            if(alunos.get(i).getRgm().equals(rgmV))
+                alunos.get(i).setNome(nome);
+                alunos.get(i).setRgm(rgmN);
+                alunos.get(i).setCurso(curso);
+                alunos.get(i).setIdade(idade);
+                alunos.get(i).setSemestre(semestre);
+                alunos.get(i).setNota1(nota1);
+                alunos.get(i).setNota2(nota2);
+
+       }
+       return null;
    }
     public ArrayList<Aluno> pesquisaFaixaEtaria(int idadeInicial, int idadeFinal) {
         ArrayList<Aluno> lista = new ArrayList<Aluno>();
@@ -87,6 +91,27 @@ public class Cadastrar {
             }
         }
         return lista;
+    }
+    
+    public void maiorMedia(){
+       
+        if(alunos.size() == 0){
+            System.out.println("Nenhum registro encontrado.");
+        }else{
+        float x = 0;
+        for(int i = 0;i < alunos.size();i++){
+           
+            if(x < (alunos.get(i).getNota1()+alunos.get(i).getNota2())/2){
+                x = (alunos.get(i).getNota1()+alunos.get(i).getNota2())/2;
+            }            
+        }
+        for(int i = 0;i < alunos.size();i++){
+           if(x == (alunos.get(i).getNota1()+alunos.get(i).getNota2())/2){
+               System.out.println("Maior media:"+x);
+           
+        }
+        }
+    }
     }
 
     public void limparCadastro() {
