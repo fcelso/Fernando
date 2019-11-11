@@ -125,11 +125,7 @@ public class MenuCadastro {
                     
                     Aluno c = cadastro.alterarDados(rgm, nome, idade, curso, semestre, nota1, nota2);
                     
-                    if (c == null) {
-                        System.out.println("Informar RGM valido");
-                    }else {
-                        c.print();
-                    }
+                  c.print();
                     break;
 
                 case 5:
