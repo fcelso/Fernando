@@ -62,7 +62,7 @@ public class Aluno {
     }
 
     public void setCurso(String curso) {
-        this.nome = curso;
+        this.curso = curso;
     }
 
     public String getSemestre() {
@@ -70,7 +70,7 @@ public class Aluno {
     }
 
     public void setSemestre(String semestre) {
-        this.nome = semestre;
+        this.semestre = semestre;
     }
     
     public float getNota1() {
