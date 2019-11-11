@@ -99,33 +99,37 @@ public class MenuCadastro {
                 case 4:
                     
                     System.out.println("Qual o RGM do aluno? ");
-                    rgm = ler.next();
+                    String rgmAtual = ler.next();
                     
-                     if (rgm == null) {
+                    Aluno old = cadastro.pesquisaRgm(rgmAtual);
+                    
+                     if (old == null) {
                         System.out.println("Não encontrei");
-                    }
+                    }else{
+                        System.out.println("Qual RGM correto?");
+                        String rgmNovo = ler.next();
 
-                    System.out.println("Qual o nome correto? ");
-                    nome = ler.next();
+                        System.out.println("Qual o nome correto? ");
+                        nome = ler.next();
 
-                    System.out.println("Qual a idade correta? ");
-                    idade = ler.nextInt();
+                        System.out.println("Qual a idade correta? ");
+                        idade = ler.nextInt();
 
-                    System.out.println("Qual o curso correto? ");
-                    curso = ler.next();
+                        System.out.println("Qual o curso correto? ");
+                        curso = ler.next();
 
-                    System.out.println("Qual o semestre correto? ");
-                    semestre = ler.next();
+                        System.out.println("Qual o semestre correto? ");
+                        semestre = ler.next();
 
-                    System.out.println("Qual a nota 1? ");
-                    nota1 = ler.nextFloat();
+                        System.out.println("Qual a nota 1? ");
+                        nota1 = ler.nextFloat();
 
-                    System.out.println("Qual a nota 2? ");
-                    nota2 = ler.nextFloat();
+                        System.out.println("Qual a nota 2? ");
+                        nota2 = ler.nextFloat();
                     
-                    Aluno c = cadastro.alterarDados(rgm, nome, idade, curso, semestre, nota1, nota2);
+                        Aluno novo = cadastro.alterarDados(rgmAtual,rgmNovo, nome, idade, curso, semestre, nota1, nota2);
                     
-                  c.print();
+                     }
                     break;
 
                 case 5:
@@ -150,7 +154,7 @@ public class MenuCadastro {
                     break;
                     
                 case 6:
-                    
+                    cadastro.maiorMedia();
                     break;
                     
                 case 7:
