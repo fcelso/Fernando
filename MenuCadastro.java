@@ -100,33 +100,30 @@ public class MenuCadastro {
                     
                     System.out.println("Qual o RGM do aluno? ");
                     rgm = ler.next();
-                    Aluno c = cadastro.pesquisaRgm(rgm);
-                     if (c == null) {
-                        System.out.println("Não encontrei");
-                    } else {
-                        c.print();
-                    }
                     
-                    System.out.println("Qual o RGM correto? ");
-                    c.setRgm(ler.next());
+                     if (rgm == null) {
+                        System.out.println("Não encontrei");
+                    }
 
                     System.out.println("Qual o nome correto? ");
-                    c.setNome(ler.next());
+                    nome = ler.next();
 
                     System.out.println("Qual a idade correta? ");
-                    c.setIdade (ler.nextInt());
+                    idade = ler.nextInt();
 
                     System.out.println("Qual o curso correto? ");
-                    c.setCurso(ler.next());
+                    curso = ler.next();
 
                     System.out.println("Qual o semestre correto? ");
-                    c.setSemestre(ler.next());
+                    semestre = ler.next();
 
                     System.out.println("Qual a nota 1? ");
-                    c.setNota1 (ler.nextFloat());
+                    nota1 = ler.nextFloat();
 
                     System.out.println("Qual a nota 2? ");
-                    c.setNota2 (ler.nextFloat());
+                    nota2 = ler.nextFloat();
+                    
+                    Aluno c = cadastro.alterarDados(rgm, nome, idade, curso, semestre, nota1, nota2);
                     
                     if (c == null) {
                         System.out.println("Informar RGM valido");
