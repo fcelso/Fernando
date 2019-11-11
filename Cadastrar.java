@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -66,26 +66,18 @@ public class Cadastrar {
         return null;
     }
 
-   /* public Aluno alterarDados() {
-
-        Scanner ler = new Scanner(System.in);
-
-        String rgm, nome, curso, semestre;
-
-        for (int i = 0; i < alunos.size(); i++) {
-            if (alunos.get(i).getCurso() != null) {
-
-                System.out.println("Cadastro alterado");
-
-                System.out.println("Qual o nome do aluno? ");
-                nome = ler.next();
-                alunos.get(i).getNome() = nome;
-
-            }
-        }
-        return null;
-    }*/
-
+   public Aluno alterarDados(String rgm, String nome, int idade, String curso, String semestre, float nota1, float nota2) {
+   
+       ArrayList<Aluno> lista = new ArrayList<Aluno>();
+       for (int i = 0; i < alunos.size(); i++) {
+            if (alunos.get(i).getRgm().equalsIgnoreCase(rgm)) {
+                return alunos.get(i);
+       
+       
+       
+                
+ 
+   }
     public ArrayList<Aluno> pesquisaFaixaEtaria(int idadeInicial, int idadeFinal) {
         ArrayList<Aluno> lista = new ArrayList<Aluno>();
 
